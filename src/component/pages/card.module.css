@@ -1,0 +1,76 @@
+
+.card {
+    overflow: hidden;
+    box-shadow: 0 2px 20px clr-gray300;
+    border-radius: radius;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    width: 300px;
+    margin: 20px;
+    flex-wrap: wrap;
+    background-color: #66BB6A;
+}
+
+.card body{
+    font-family: Oxygen, sans-serif;
+    margin: 2rem;
+      
+}
+.card img {
+      height: 12rem;
+      width: 100%;
+      object-fit: cover;
+    }
+  
+.card h2 {
+      padding: 1rem;
+      color: #fff;
+    }
+  
+.card p {
+      padding: 0 1rem;
+      color: #fff
+    }
+  
+.card button {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid #fff;
+    background: #2E7D32;
+    color: #fff;
+    border-radius: radius;
+    transition: background 200ms ease-in, color 200ms ease-in;  
+    cursor: pointer; 
+    }
+   Link {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid #fff;
+    background: #2E7D32;
+    color: #fff;
+    border-radius: radius;
+    transition: background 200ms ease-in, color 200ms ease-in;  
+    cursor: pointer; 
+  }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    
+    .card Link:hover  {
+      color: #FFBB33;
+    }
+    .card button:hover  {
+      color: #FFBB33;
+    }
+  
+    
+  

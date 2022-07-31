@@ -1,0 +1,21 @@
+.create_post {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4em;
+}
+
+.create_post label{
+    margin:1em;
+}
+.create_post h1{
+    color: #2E7D32;
+    margin: 1px;
+}
+.create_post p {
+    color: #2E7D32;
+    margin: 1px;
+}

@@ -1,0 +1,12 @@
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home_container img {
+    width: 350px;
+    margin: 2em 0;
+}
