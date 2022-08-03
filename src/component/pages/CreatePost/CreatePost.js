@@ -106,11 +106,14 @@ const CreatePost = () => {
       const newState = prevState.map((valor) => {
         if (valor.chave === chave) {
           return {
-            ...valor.descricao,
-            [event.target.name]: event.target.value,
+            ...valor,
+            [event.target.name]: {
+              descricao: event.target.value,
+              is_correta: valor[event.target.name].is_correta,
+            },
           };
         }
-        return valor.descricao;
+        return valor;
       });
       return newState;
     });
@@ -221,6 +224,8 @@ const CreatePost = () => {
                 value={valor.resposta_e.descricao}
                 onChange={(event) => handleInputChange(valor.chave, event)}
               />
+
+              <p>Esse é um teste</p>
               <label>
                 <Select
                   options={opcoesRespostaCorreta}

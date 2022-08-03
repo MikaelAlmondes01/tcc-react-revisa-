@@ -2,9 +2,13 @@
     display: flex;
     justify-content: space-between;
     background-color: #66BB6A;
-    padding: 1em;
+    padding: 1px;
 }
 
+.coruja{
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
 .list {
     display: flex;
     list-style: none;

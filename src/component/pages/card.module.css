@@ -2,7 +2,7 @@
 .card {
     overflow: hidden;
     box-shadow: 0 2px 20px clr-gray300;
-    border-radius: radius;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -47,6 +47,7 @@
     border-radius: radius;
     transition: background 200ms ease-in, color 200ms ease-in;  
     cursor: pointer; 
+    border-radius: 10px;
     }
    Link {
     padding: 1rem;

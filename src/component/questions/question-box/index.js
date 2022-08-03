@@ -20,7 +20,6 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           }
         >
           {questions[currentQuestion].resposta_a.descricao}
-          essa é uma questão
         </button>
         <button
           className={styles.but}
@@ -29,7 +28,30 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           }
         >
           {questions[currentQuestion].resposta_b["descricao"]}
-          essa é uma questão
+        </button>
+        <button
+          className={styles.but}
+          onClick={() =>
+            onClick(questions[currentQuestion].resposta_c.is_correta)
+          }
+        >
+          {questions[currentQuestion].resposta_c["descricao"]}
+        </button>
+        <button
+          className={styles.but}
+          onClick={() =>
+            onClick(questions[currentQuestion].resposta_d.is_correta)
+          }
+        >
+          {questions[currentQuestion].resposta_d["descricao"]}
+        </button>
+        <button
+          className={styles.but}
+          onClick={() =>
+            onClick(questions[currentQuestion].resposta_e.is_correta)
+          }
+        >
+          {questions[currentQuestion].resposta_e["descricao"]}
         </button>
       </div>
     </>
