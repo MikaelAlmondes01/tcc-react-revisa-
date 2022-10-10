@@ -72,6 +72,13 @@
     .card button:hover  {
       color: #FFBB33;
     }
+
+   .correta {
+    color:#2E7D32;
+   }
   
+   .errada {
+    color:red
+   }
     
   

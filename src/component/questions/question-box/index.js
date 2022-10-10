@@ -1,6 +1,6 @@
 import styles from "../../Quizzes/quizz.module.css";
 
-const QuestionBox = ({ currentQuestion, questions, onClick }) => {
+const QuestionBox = ({ isRespondeu, currentQuestion, questions, onClick }) => {
   return (
     <>
       <div className={styles.question_section}>
@@ -14,7 +14,13 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
 
       <div className={styles.answer_section}>
         <button
-          className={styles.but}
+          className={
+            isRespondeu
+              ? questions[currentQuestion].resposta_a.is_correta
+                ? styles.correta
+                : styles.errada
+              : styles.but
+          }
           onClick={() =>
             onClick(questions[currentQuestion].resposta_a.is_correta)
           }
@@ -22,7 +28,13 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           {questions[currentQuestion].resposta_a.descricao}
         </button>
         <button
-          className={styles.but}
+          className={
+            isRespondeu
+              ? questions[currentQuestion].resposta_b.is_correta
+                ? styles.correta
+                : styles.errada
+              : styles.but
+          }
           onClick={() =>
             onClick(questions[currentQuestion].resposta_b.is_correta)
           }
@@ -30,7 +42,13 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           {questions[currentQuestion].resposta_b["descricao"]}
         </button>
         <button
-          className={styles.but}
+          className={
+            isRespondeu
+              ? questions[currentQuestion].resposta_c.is_correta
+                ? styles.correta
+                : styles.errada
+              : styles.but
+          }
           onClick={() =>
             onClick(questions[currentQuestion].resposta_c.is_correta)
           }
@@ -38,7 +56,13 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           {questions[currentQuestion].resposta_c["descricao"]}
         </button>
         <button
-          className={styles.but}
+          className={
+            isRespondeu
+              ? questions[currentQuestion].resposta_d.is_correta
+                ? styles.correta
+                : styles.errada
+              : styles.but
+          }
           onClick={() =>
             onClick(questions[currentQuestion].resposta_d.is_correta)
           }
@@ -46,7 +70,13 @@ const QuestionBox = ({ currentQuestion, questions, onClick }) => {
           {questions[currentQuestion].resposta_d["descricao"]}
         </button>
         <button
-          className={styles.but}
+          className={
+            isRespondeu
+              ? questions[currentQuestion].resposta_e.is_correta
+                ? styles.correta
+                : styles.errada
+              : styles.but
+          }
           onClick={() =>
             onClick(questions[currentQuestion].resposta_e.is_correta)
           }

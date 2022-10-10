@@ -9,18 +9,22 @@ function Quizz(props) {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isRespondeu, setIsRespondeu] = useState(false);
 
   function handleAnswer(isCorrect) {
     if (isCorrect) {
       setScore(score + 1);
     }
-
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < props.perguntas.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
+    setIsRespondeu(true);
+    setTimeout(function () {
+      setIsRespondeu(false);
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < props.perguntas.length) {
+        setCurrentQuestion(nextQuestion);
+      } else {
+        setShowScore(true);
+      }
+    }, 2000);
   }
 
   return (
@@ -29,6 +33,7 @@ function Quizz(props) {
         <Score score={score} questions={props.perguntas} />
       ) : (
         <QuestionBox
+          isRespondeu={isRespondeu}
           currentQuestion={currentQuestion}
           questions={props.perguntas}
           onClick={(isCorrect) => handleAnswer(isCorrect)}

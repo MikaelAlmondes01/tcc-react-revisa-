@@ -1,0 +1,76 @@
+
+.container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4em;
+}
+.secaoSmall{
+    width: 100%;
+}
+.secaoSmall p{
+    margin-top: 10px;
+    color: #66BB6A;
+    font-size: 20px;
+}
+.secaoSmall img{
+    margin-left: 15vw;
+}
+
+.secao{
+    width: 100%;
+}
+.secao p{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    color: #66BB6A;
+    font-size: 20px;
+}
+
+.secao img{
+    margin-top: 30px;;
+    margin-left: 6vw;
+}
+.secaoLarge{
+    width: 100%;
+}
+.secaoLarge p{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #66BB6A;
+    font-size: 20px;
+}
+.secaoLarge img{
+    margin-top: 30px;
+    margin-left: 3vw;
+}
+.title{
+    text-align: center;
+}
+
+.cardImageSmall{
+    align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    width: auto;
+    height: 100px;
+    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+}
+.cardImageLarge{
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: auto;
+    height: 300px;
+    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+
+}
+.cardImage{
+    margin-bottom: 30px;
+    border-radius: 10px;
+    width: auto;
+    height: 464px;
+    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+}

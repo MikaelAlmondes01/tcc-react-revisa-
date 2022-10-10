@@ -25,6 +25,7 @@ const CreatePost = () => {
 
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
+  const [imagensHistoria, setImagensHistoria] = useState([null]);
   const [body, setBody] = useState("");
   const [formError, setFormError] = useState("");
   const [selectMateria, setSelectMateria] = useState("");
@@ -68,6 +69,7 @@ const CreatePost = () => {
       {
         title,
         image,
+        imagensHistoria,
         body,
         selectQuizz,
         uid: user.uid,
@@ -95,6 +97,9 @@ const CreatePost = () => {
     ]);
   };
 
+  const addUrlImagem = () => {
+    setImagensHistoria((prevState) => [...prevState, null]);
+  };
   const remove = (chave) => {
     setSelectQuizz((prevState) =>
       prevState.filter((valor) => valor.chave !== chave)
@@ -116,6 +121,13 @@ const CreatePost = () => {
         return valor;
       });
       return newState;
+    });
+  };
+
+  const handleInputImagesHistoria = (index, valor) => {
+    setImagensHistoria((prevState) => {
+      prevState[index] = valor;
+      return prevState;
     });
   };
 
@@ -178,6 +190,25 @@ const CreatePost = () => {
           ></textarea>
         </label>
         <label>
+          {imagensHistoria.map((valor, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                name="image"
+                required
+                placeholder="Insira a imagem que represente seu post"
+                onChange={(e) =>
+                  handleInputImagesHistoria(index, e.target.value)
+                }
+                value={valor}
+              />
+            </div>
+          ))}
+          <button onClick={addUrlImagem} className="butao">
+            Adicionar
+          </button>
+        </label>
+        <label>
           {selectQuizz.map((valor, index) => (
             <div key={valor.chave}>
               <input
@@ -224,8 +255,6 @@ const CreatePost = () => {
                 value={valor.resposta_e.descricao}
                 onChange={(event) => handleInputChange(valor.chave, event)}
               />
-
-              <p>Esse é um teste</p>
               <label>
                 <Select
                   options={opcoesRespostaCorreta}
