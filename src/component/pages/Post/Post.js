@@ -20,16 +20,41 @@ const Post = () => {
     id
   );
 
+  // setas
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "red" }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{ ...style, display: "block", background: "green" }}
+        onClick={onClick}
+      />
+    );
+  }
+
   //Carrossel
   const settings = {
     dots: true,
     fade: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     pauseOnHover: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
