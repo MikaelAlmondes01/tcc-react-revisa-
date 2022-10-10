@@ -26,7 +26,11 @@ const Post = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "red" }}
+        style={{
+          ...style,
+          display: "block",
+          background: "#66BB6A",
+        }}
         onClick={onClick}
       />
     );
@@ -37,7 +41,7 @@ const Post = () => {
     return (
       <div
         className={className}
-        style={{ ...style, display: "block", background: "green" }}
+        style={{ ...style, display: "block", background: "#66BB6A" }}
         onClick={onClick}
       />
     );

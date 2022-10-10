@@ -27,3 +27,36 @@
     width: 350px;
     margin: 2em 0;
 }
+.link_home {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid #fff;
+    background: #66BB6A;
+    color: #fff;
+    border-radius: radius;
+    transition: background 200ms ease-in, color 200ms ease-in;  
+    cursor: pointer; 
+    border-radius: 10px;
+    text-decoration: none;
+    
+    }
+   .link {
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    background: #66BB6A;
+    color: #fff;
+    border-radius: radius;
+    transition: background 200ms ease-in, color 200ms ease-in;  
+    cursor: pointer; 
+    text-decoration: none;
+  }
+
+     .link:hover  {
+    color: #FFBB33;
+  }

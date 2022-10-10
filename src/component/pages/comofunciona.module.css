@@ -12,7 +12,7 @@
 }
 .secaoSmall p{
     margin-top: 10px;
-    color: #66BB6A;
+    color: #2E7D32;
     font-size: 20px;
 }
 .secaoSmall img{
@@ -23,9 +23,9 @@
     width: 100%;
 }
 .secao p{
-    margin-top: 70px;
+    margin-top: 100px;
     margin-bottom: 50px;
-    color: #66BB6A;
+    color: #2E7D32;
     font-size: 20px;
 }
 
@@ -39,7 +39,7 @@
 .secaoLarge p{
     margin-top: 50px;
     margin-bottom: 50px;
-    color: #66BB6A;
+    color: #2E7D32;
     font-size: 20px;
 }
 .secaoLarge img{
@@ -57,14 +57,14 @@
     border-radius: 10px;
     width: auto;
     height: 100px;
-    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+    
 }
 .cardImageLarge{
     margin-bottom: 30px;
     border-radius: 10px;
     width: auto;
     height: 300px;
-    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+    
 
 }
 .cardImage{
@@ -72,5 +72,5 @@
     border-radius: 10px;
     width: auto;
     height: 464px;
-    box-shadow: rgb(0 0 0 / 39%) 0px 30px 80px 10px, rgb(0 0 0 / 52%) 0px 11px 30px -7px;
+    
 }
