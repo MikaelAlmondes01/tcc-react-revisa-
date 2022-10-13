@@ -123,7 +123,10 @@ const Post = () => {
               />
             </Slider>
           </div>
-          <div>{post.body}</div>
+          <div className={styles.texto}>{post.body}</div>
+          <h1 className={styles.margin}>
+            Quizz para resoluções de questões sobre o assunto
+          </h1>
           <Quizz perguntas={post.selectQuizz} />
         </>
       )}
