@@ -1,68 +1,61 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase/config";
 import {
-    collection,
-    query,
-    orderBy,
-    onSnapshot,
-    where,
+  collection,
+  query,
+  orderBy,
+  onSnapshot,
+  where,
 } from "firebase/firestore";
 
-export const useFetchDocuments = (docCollection, search = null, uid = null) => {
+export const useFetchDocuments = (docCollection, search = null) => {
+  const [documents, setDocuments] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
 
-    const [documents, setDocuments] = useState(null)
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(null);
+  //deal with memory leak
+  const [cancelled, setCancelled] = useState(false);
 
-    //deal with memory leak
-    const [cancelled, setCancelled] = useState(false);
+  useEffect(() => {
+    async function loadData() {
+      if (cancelled) return;
 
-    useEffect(() => {
-        async function loadData() {
-            if(cancelled) return
+      setLoading(true);
 
-            setLoading(true)
+      const collectionRef = await collection(db, docCollection);
 
-            const collectionRef = await collection(db, docCollection)
+      try {
+        let q;
+        //busca
+        //dashboard
 
-            try {
+        q = await query(collectionRef, orderBy("createdAt", "desc"));
 
-                let q;
-                //busca
-                //dashboard
+        await onSnapshot(q, (querySnapshot) => {
+          setDocuments(
+            querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }))
+          );
+        });
+        console.log(documents);
 
-                
-                q = await query(collectionRef, orderBy("createdAt", "desc"));
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+        setError(error.message);
 
-                
-                await onSnapshot(q, (querySnapshot) => {
-                    setDocuments(
-                        querySnapshot.docs.map((doc) => ({
-                            id: doc.id,
-                            ...doc.data(),
-                        }))
-                    );
-                });
+        setLoading(false);
+      }
+    }
 
-                setLoading(false)
-                
-            } catch (error) {
-                console.log(error);
-                setError(error.message);
-                
-                setLoading(false);
-            }
+    loadData();
+  }, [docCollection, search, cancelled]);
 
-            
+  useEffect(() => {
+    return () => setCancelled(true);
+  }, []);
 
-        }
-        
-        loadData();
-    }, [docCollection, search, uid, cancelled])
-
-    useEffect(() => {
-        return () => setCancelled(true);
-    }, []);
-
-    return { documents, loading, error };
+  return { documents, loading, error };
 };
