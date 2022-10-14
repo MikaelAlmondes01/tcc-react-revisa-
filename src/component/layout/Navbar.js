@@ -37,6 +37,9 @@ function Navbar() {
           {!user && (
             <>
               <li className={styles.item}>
+                <Link to="/cards">Cards</Link>
+              </li>
+              <li className={styles.item}>
                 <Link to="/login">Login</Link>
               </li>
               <li className={styles.item}>
@@ -47,10 +50,6 @@ function Navbar() {
 
           {user && (
             <>
-              <li className={styles.item}>
-                <Link to="/cards">Cards</Link>
-              </li>
-
               <li>
                 <button onClick={logout}>Sair</button>
               </li>
